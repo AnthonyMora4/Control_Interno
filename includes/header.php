@@ -7,10 +7,11 @@
     <title>Document</title> 
 	<link rel="stylesheet" href="css/estilo_h.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>	<script src="js/app.js" defer></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--cambio-->
 </head>
 <body>
 	<nav class="menu">
-		<img src="img/logo1.png" alt="">
+	<img src="img/logo1.png" alt="">
 		<ul class="menu_items">
 			<li class="active"><a href="#"> Inicio</a></li>
 		<li><a href="#">Gestión Area de aplicaión</a></li>

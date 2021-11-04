@@ -2,6 +2,9 @@ section{
     width: 100%;
     height: 640px;
 }
+body{
+    height: 100%;
+}
 section .Entradas{
    position: absolute;
    left: 35%;
@@ -26,3 +29,39 @@ section .Boton{
     color: white;
     background-color: #011737;
  }
+ .FooterNegro{/*parte negra del footer*/
+    margin-top: 10.6%;
+    background-color: black;/*fondo negro*/
+    display: flex;/*vista tipo flex*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    align-items: center;/*alinear items al centro*/
+    color: white;/*color de letra blanca*/
+    height: 50px;
+}
+
+@media screen and (max-width:858px) {
+    section .Entradas{
+        position: absolute;
+        left: 35%;
+        margin-top: 10%;
+        width: 50%;
+        height: 4.5%;
+        border-style: solid;
+        border-radius: 10px;
+        font-family: Arial;
+         font-size: 100%;
+     }
+    section .Boton{
+        position: absolute;
+        left: 65%;
+        margin-top: 10%;
+        width: 20%;
+        height: 4.5%;
+        border-style: solid;
+        border-radius: 10px;
+        font-family: Arial;
+        font-size: 100%;
+        color: white;
+        background-color: #011737;
+     }
+}
