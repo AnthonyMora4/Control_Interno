@@ -1,0 +1,31 @@
+.img_principal{
+    width: 100%;
+    background: yellow;
+    background-image: url(../img/PaginaPrincipal.jpg);
+    box-sizing: border-box;
+}
+
+.sobre_nosotros{
+    width: 100%;
+    background: brown;
+    height:15%;
+}
+.objetivos{
+    width: 100%;
+    background: green;
+    height:20%;
+}
+
+.contactos{
+    width: 100%;
+    background: purple;
+    height:8%;
+}
+
+.indicadores{
+    width: 100%;
+    background: orangered;
+    height:20%;
+
+}
+
