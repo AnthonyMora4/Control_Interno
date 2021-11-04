@@ -4,6 +4,7 @@ include("includes/header.php");//includ de el header
 <link rel="stylesheet" href="css/Estiloregistro.css">
 <script src="js/Registro.js" defer></script>
 <section>
+        <p><?php include("php/Registro.php"); $mensaje=mensaje(); echo $mensaje ?></p>
         <form method="POST" action="php/Registro.php">
         <input class="Entradas" type="text" id="nombre" name="nombre" placeholder="Nombre">
         <br>
