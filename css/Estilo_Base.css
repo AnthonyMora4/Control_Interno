@@ -1,0 +1,104 @@
+header{/*header de la pagina*/
+    background-color: white;/*color blanco*/
+    height: 10%;/*alto del header*/
+    width: 100%;/*ancho del header*/
+    overflow: hidden;/*es para que todo el contenido permanezca dento de esa seccion del footer*/
+}
+header img{
+    float: left;/*alinea contenidos a la izquierda uno de otro*/
+}
+.menu{
+    list-style:none;/*quita los estilos de la lista*/
+	margin:0;/*pone el margen en 0*/
+	padding:0;/*espaciado en 0*/
+    position: relative;/*posiscion del contenido*/
+    top: 40px;/*mover arriba 40 pixeles*/
+}
+.menu li{
+    margin:2px;/*pone el margen en 2 para cada lista*/
+	padding:0; /*espaciado en 0*/
+    float:left;/*alinea contenidos a la izquierda uno de otro*/
+}
+
+.menu li a{
+    display:block;/*muestra todo en un bloke*/ 
+	width:100px;/*ancho*/
+	padding:4px 0;/*espaciado*/
+	text-decoration:none;/*ninguna decoracion en el texto*/
+	text-align:center;/*alineacion del texto*/
+	font-size:120%;/*tamanno de letra*/
+	color:#000000;/*color de letra del menu*/
+	
+}
+.menu li a:hover{
+   background-color:#011737 ;
+   color: white;
+}
+.LineaSuperior{/*linea azul debajo del header*/
+    background-color:#011737 ;
+    width: 100%;/*ancho de la linea*/
+}
+section{/*parte central de la pagina*/
+    background-color: white;/*color de fondo*/
+    height: 80%;/*alto del section segun el body*/
+    width: 100%;/*ancho del section segun el body*/
+}
+.FooterAzul{/*parte azul del footer*/
+    background-color: #011737 ;/*fondo azul*/
+    text-align: center;/*alineacion del texto al centro para centrar todos los p*/
+    height: 10%;/*altura de la seccion azul del footer*/
+    color: white;/*color de letra */
+    overflow: hidden;/*es para que todo el contenido permanezca dento de esa seccion del footer*/
+}
+
+.FooterGris{/*parte gris del footer*/
+    background-color: grey;/*fondo gris*/
+    color: white;/*color de letra*/
+    overflow: hidden;/*es para que todo el contenido permanezca dento de esa seccion del footer*/
+}
+.FooterGris p{/*estilos para los parrafos del footer gris*/
+    display: table-cell;/*alinea los elementos como una fila*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    align-items: center;/*alinear items al centro*/
+    padding: 10px;/*un espaciado de 10 pixeles*/
+    font-family: Arial;/*tipo de letra*/
+    font-size: 120%;/*tamanno de letra*/
+}
+.FooterGris i{/*estilos para los iconos del footer gris*/
+    display: table-cell;/*alinea los elementos como una fila*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    align-items: center;/*alinear items al centro*/
+    padding: 10px;/*un espaciado de 10 pixeles*/
+}
+.FooterNegro{/*parte negra del footer*/
+    background-color: black;/*fondo negro*/
+    display: flex;/*vista tipo flex*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    align-items: center;/*alinear items al centro*/
+    color: white;/*color de letra blanca*/
+}
+
+.alinear_izquierda {/*estilo para alinear contenidos del div en el footer azul*/
+    float:left;/*alinea contenidos a la izquierda uno de otro*/
+    width:33.3%;/*tamanno segun el footer azul*/
+}
+
+.alinear_centro {/*estilo para alinear contenidos del div en el footer azul*/
+    float:left;/*alinea contenidos a la izquierda uno de otro*/
+    width:33.3%;/*tamanno segun el footer azul*/
+}
+
+.alinerar_derecha {/*estilo para alinear contenidos del div en el footer azul*/
+    float:left;/*alinea contenidos a la izquierda uno de otro*/
+    width:33.3%;/*tamanno segun el footer azul*/
+}
+
+.P_letragrande{/*estilos para las letras grandes de los parros en el footer azul*/
+    font-family: Arial;/*tipo de letra*/
+    font-size: 120%;/*tamanno de letra*/
+}
+.P_letrape{/*estilos para las letras pequennas de los parros en el footer azul*/
+    font-family: Arial;/*tipo de letra*/
+    font-size: 120%;/*tamanno de letra*/
+}
+

@@ -10,7 +10,7 @@
 </head>
 <body>
 	<nav class="menu">
-		<label class="logo">Control Interno</label>
+		<img src="img/logo1.png" alt="">
 		<ul class="menu_items">
 			<li class="active"><a href="#"> Inicio</a></li>
 		<li><a href="#">Gestión Area de aplicaión</a></li>
