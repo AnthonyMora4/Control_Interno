@@ -7,6 +7,7 @@
 </div>
 
 <div class="sobre_nosotros" >
+   <div class="img"></div>
 
 </div>
 

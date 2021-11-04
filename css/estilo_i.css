@@ -1,15 +1,6 @@
-.img_principal{
-    width: 100%;
-    background: yellow;
-    background-image: url(../img/PaginaPrincipal.jpg);
-    box-sizing: border-box;
-}
 
-.sobre_nosotros{
-    width: 100%;
-    background: brown;
-    height:15%;
-}
+
+
 .objetivos{
     width: 100%;
     background: green;
@@ -28,4 +19,19 @@
     height:20%;
 
 }
+.img{
+    margin:10px auto;
+    border-radius:5px;
+    border: 1px solid #999;
+    padding:13px;
+    width:220px;
+    height:220px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url(../img/PaginaPrincipal.jpg);
+    background-size: cover;
+    }
+  .img img{
+    width: 100%;
+  }
 
