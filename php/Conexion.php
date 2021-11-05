@@ -1,6 +1,7 @@
 <?php
 
 function conectar(){
+    //datos de conexion
     $user="root";
     $pass="";
     $server="localhost";
