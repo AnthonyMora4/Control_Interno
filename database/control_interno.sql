@@ -88,3 +88,21 @@ DELIMITER ;
 
 
 
+
+DELIMITER //
+
+CREATE PROCEDURE InsArea (IN nombre_area VARCHAR(50),IN siglas_area VARCHAR(10))
+
+    BEGIN
+
+         INSERT INTO areas_aplicacion(nombre_area_aplicacion,siglas_area_aplicacion)
+
+         VALUES(nombre_area,siglas_area);
+
+    END//
+    
+DELIMITER ;
+
+
+
+

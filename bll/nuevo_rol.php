@@ -8,7 +8,7 @@ $stmt = $db_connection->prepare("CALL SelRoles();");
 $stmt->execute();
 $getRol = $stmt->get_result();
 $qtyResults = $getRol->num_rows;
-
+$db_connection->close();
 while ($row = mysqli_fetch_array($getRol)) {
  if($row['nombre_rol']==$RolName){
     $resultado = true;
@@ -20,6 +20,7 @@ if($resultado){
     echo '<div class="alert alert-danger">Ha ocurrido un problema al momento de crear el rol, 3 segundos será redireccionado</div>';
     header("Refresh: 2; URL=http://localhost/Proyecto/crear_rol.php");
 }else{
+include('../database/db.php');
 $stmt = $db_connection->prepare("CALL InsRol(?);");
 $stmt->bind_param('s',$RolName);
 $stmt->execute();
