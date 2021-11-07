@@ -1,37 +1,152 @@
 
-
+img{
+    max-width:100%;
+}
+.sobre_nosotros{
+    margin-top: 0;
+    max-width:100%;
+    max-height: 40%;
+    background:white;
+    display: flex;
+}
+.texto{
+    width: auto;
+    margin-left: 30%;
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+}
+.texto_img{
+    float: right;
+    margin-left: 80px;
+    padding: 10px 10px;
+    
+}
 
 .objetivos{
     width: 100%;
-    background: green;
-    height:20%;
+    background: lightgrey;
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 40px;
 }
 
-.contactos{
+.p1{
+    text-align: center;
+    padding: 10px 10px;
+    margin-top:80px;
+    margin-bottom: 80px;
+
+}
+.p2{
+    text-align: center;
+    padding: 10px 10px;
+    margin-top:80px;
+}
+.p3{
+    text-align: center;
+    padding: 10px 10px;
+    margin-top:80px;
+}
+.FooterAzul{/*parte azul del footer*/
+    background-color: #011737 ;/*fondo azul*/
+    text-align: center;/*alineacion del texto al centro para centrar todos los p*/
+    height: 10%;/*altura de la seccion azul del footer*/
+    color: white;/*color de letra */
+    display: flex;
+    padding-top: 70px;
+}
+.alinear_izquierda {
+    float: left;
     width: 100%;
-    background: purple;
-    height:8%;
 }
 
-.indicadores{
+.alinear_centro {
+   display:inline-block;
+   width: 100%;
+}
+
+.alinerar_derecha {
+    float: right;
     width: 100%;
-    background: orangered;
-    height:20%;
+}
+
+.P_letragrande{/*estilos para las letras grandes de los parros en el footer azul*/
+    font-family: Arial;/*tipo de letra*/
+    font-size: 120%;/*tamanno de letra*/
+}
+.P_letrape{/*estilos para las letras pequennas de los parros en el footer azul*/
+    font-family: Arial;/*tipo de letra*/
+    font-size: 120%;/*tamanno de letra*/
+}
+.FooterGris{
+    background: rgb(43, 42, 42);
+    text-align: center;
+    color: white;
+    height: 18%;
+    display: flex;
+    padding-top: 90px;
+}
+.FooterGris i{/*estilos para los iconos del footer gris*/
+/*alinea los elementos como una fila*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    padding: 10px;/*un espaciado de 10 pixeles*/
+}
+.izquierda{
+    float: left;
+    width: 100%;
 
 }
-.img{
-    margin:10px auto;
-    border-radius:5px;
-    border: 1px solid #999;
-    padding:13px;
-    width:220px;
-    height:220px;
-    background-size: 100% 100%;
-    background-repeat:no-repeat;
-    background:url(../img/PaginaPrincipal.jpg);
-    background-size: cover;
+.centro{
+    display:inline-block;
+    width: 100%;
+
+
+}
+.derecha{
+    float: right;
+    width: 100%;
+ 
+}
+@media screen and (max-width:800px){
+    .sobre_nosotros{
+        display: block;
     }
-  .img img{
-    width: 100%;
-  }
+    .texto{
+        max-width: 100%;
+        text-align: center;
+        padding-right: 85px;
+        font-size: 15px;
+    }
+    .texto_img{
+        width: 100%;
+        text-align: center;
+        background: white;
+      
+    }
+    .objetivos{
+        display: block;
+        
+    }
+ 
 
+    .FooterAzul{
+        display: block;
+        padding: 20px 20px;
+    }
+    .alinear_izquierda{
+        margin-bottom: 15px;
+    }
+    .alinear_centro{
+        margin-bottom: 15px;
+    }
+    .alinerar_derecha{
+        margin-bottom: 15px;
+    }
+
+    .FooterGris{
+        display: block;
+        padding: 20px 20px;
+    }
+}

@@ -1,0 +1,105 @@
+
+.contenedor{
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+    margin:0 auto;
+    text-align:center;
+  
+}
+.nombre{
+    width: 100%;
+    margin-top: 17%;
+}
+.siglas{
+    margin-top: 2%;
+    width: 100%;
+}
+
+.crear{
+    margin-top: 2%;
+    width: 100%;
+    margin-bottom: 58.5%;
+}
+.Boton{
+    border-style: solid;
+    border-radius: 10px;
+    font-family: Arial;
+    font-size: 120%;
+    color: white;
+    background-color: #011737;
+}
+
+.Entradas{
+    width: 30%;
+    height: 4.5%;
+    border-style: solid;
+    border-radius: 10px;
+    font-family: Arial;
+    font-size: 120%;
+    text-align: center;
+}
+
+@media screen and (max-width:800px){
+  
+    .nombre{
+        max-width: 100%;
+        text-align: center;
+        padding-right: 85px;
+        font-size: 20px;
+    }
+    .siglas{
+        max-width: 100%;
+        text-align: center;
+        padding-right: 85px;
+        font-size: 15px;
+      
+    }
+    .Entradas{
+        width: 45%;
+        font-size: 17px;
+        margin-left: 12%;
+    }
+
+    .Boton{
+        border-radius: 4px;
+        font-size: 19px;
+        margin: auto 0;
+ 
+    }
+    
+}
+@media screen and (max-width:360px){
+  
+    .nombre{
+        max-width: 100%;
+        text-align: center;
+        padding-right: 85px;
+        font-size: 15px;
+        margin-left: 10%;
+    }
+    .siglas{
+        max-width: 100%;
+        text-align: center;
+        padding-right: 85px;
+        font-size: 15px;
+        margin-left: 10%;
+      
+    }
+    .crear{
+        margin-left: 10%;
+    }
+    .Entradas{
+        margin-right: 5%;
+        width: 50%;
+        font-size: 11px;
+    }
+
+    .Boton{
+        border-radius: 4px;
+        font-size: 13px;
+        margin-right: 16%;
+ 
+    }
+    
+}

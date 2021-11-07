@@ -13,11 +13,12 @@
 		<label class="logo">Control Interno</label>
 		<ul class="menu_items">
 			<li class="active"><a href="#"> Inicio</a></li>
-		<li><a href="#">Gestión Area de aplicaión</a></li>
-		<li><a href="#">Gestión Departamentos</a></li>
+			<li><a href="crear_rol.php">Gestión Roles</a></li>
+		<li><a href="crear_area.php">Gestión Areas</a></li>
+		<li><a href="crear_departamento.php">Gestión Departamentos</a></li>
 		<li><a href="#">Asignación de Evidencias</a></li>
 		<li><a href="#">Gestión Evaluación</a></li>
-		<li><a href="#">Gestión Periodos</a></li>
+		<li><a href="#">Asignación Periodos</a></li>
 		<li><a href="#">Iniciar Sesión</a></li>
 		<li><a href="#">Configuración</a></li>
 		</ul>

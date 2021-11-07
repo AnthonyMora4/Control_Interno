@@ -1,5 +1,12 @@
-.final{
+.Negro{
     width: 100%;
     background: black;
-    height:4%;
+    height: 40px;
+    text-align: center;
+    padding-top: 9px;
+}
+
+.pa{
+    color:white;
+   
 }
