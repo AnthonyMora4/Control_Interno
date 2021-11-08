@@ -36,13 +36,15 @@ $db_connection->close();
     <h2>Roles</h2>
     <ul class="responsive-table">
       <li class="table-header">
-        <div class="col col-1">Nombre del rol</div>
-        <div class="col col-2">Acción</div>
+      <div class="col col-1"> Id rol</div>
+        <div class="col col-2">Nombre del rol</div>
+        <div class="col col-3">Acción</div>
       </li>
       <?php while ($row = mysqli_fetch_array($getRol)) { ?>
       <li class="table-row">
-        <div class="col col-1"> <?php echo $row['nombre_rol']?> </div>
-        <div class="col col-2">
+      <div class="col col-1"> <?php echo $row['id_rol']?> </div>
+        <div class="col col-2"> <?php echo $row['nombre_rol']?> </div>
+        <div class="col col-3">
           <a href="modificar_permisos.php"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <circle cx="10" cy="10" r="7" />

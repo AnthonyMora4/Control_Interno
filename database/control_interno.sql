@@ -100,7 +100,20 @@ CREATE PROCEDURE InsArea (IN nombre_area VARCHAR(50),IN siglas_area VARCHAR(10))
          VALUES(nombre_area,siglas_area);
 
     END//
-    
+
+DELIMITER ;
+
+
+
+DELIMITER //
+
+CREATE PROCEDURE SelPermisosPorRol (IN idRolIN INT)
+
+	BEGIN
+       SELECT p.id_permiso,p.nombre_permiso FROM permisos p INNER JOIN permisos_rol pr ON p.id_permiso = pr.id_permiso
+       INNER JOIN roles r ON pr.id_rol = r.id_rol WHERE r.id_rol = idRolIN;
+	END//
+
 DELIMITER ;
 
 

@@ -5,6 +5,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="css/style.css">
 
+<?php
+
+require('database/db.php');
+$stmt = $db_connection->prepare("CALL SelRoles();");
+$stmt->execute();
+$getRol = $stmt->get_result();
+$qtyResults = $getRol->num_rows;
+$db_connection->close();
+?>
+
 <div class="col-sm-6">
     <h1 class="m-0">Gestión de Permisos</h1>
 </div>
