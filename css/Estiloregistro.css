@@ -30,7 +30,7 @@ section .Boton{
     background-color: #011737;/*color de fondo*/
  }
  .FooterNegro{/*parte negra del footer*/
-    margin-top: 9.1%;
+    margin-top: 10.5%;
     background-color: black;/*fondo negro*/
     display: flex;/*vista tipo flex*/
     justify-content: center;/*para justificar el contenido al centro*/

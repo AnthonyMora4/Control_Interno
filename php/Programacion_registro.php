@@ -22,6 +22,6 @@ $_SESSION['mensaje']=$mensaje;//llena la variable de sesion
     $mensaje="Error, usuario no registrado";
     $_SESSION['mensaje']=$mensaje;
 }
-header("Location: http://localhost/GitProyectoASPW/Control_Interno/Registro.php");//redirecciona a la pagina Registro.php
+header("Location: http://localhost/GitProyectoASPW/Control_Interno/Registro.view.php");//redirecciona a la pagina Registro.php
 
 ?>
