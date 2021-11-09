@@ -14,9 +14,12 @@ $resultado=mysqli_query($conex,$consulta);//al ser un select guarda un 1 o mas s
 while($datos=mysqli_fetch_array($resultado)){
     $GetContra=$datos['contrasena'];
     $GetCorreo=$datos['correo_usuario'];
+    $Getid_rol=$datos['id_rol'];
 }
 session_start();//inicio de la sesion
 if($GetCorreo==$Correo && $GetContra==$contra){//validacion de resultados
+    $_SESSION['id_rol']=$Getid_rol;
+    $_SESSION['usuario']=$Correo;
     header("Location: http://localhost/GitProyectoASPW/Control_Interno/index.php");//redirecciona a la pagina principal
 }else{
     $mensaje="Error, el correo y/o contraseña no son validos";

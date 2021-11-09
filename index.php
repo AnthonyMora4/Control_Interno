@@ -26,8 +26,9 @@
 
 </div>
 
-<p>jackel</p>
-<p>Tony</p>
+<?php session_start();//necesitas declarar esto para reanudar la session?>
+<p><?php echo $_SESSION['id_rol'];//aqui imprimes cualquier variable que necesites?></p>
+<p><?php echo $_SESSION['usuario'];?></p>
 
 
 
