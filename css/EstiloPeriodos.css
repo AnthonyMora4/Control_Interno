@@ -1,0 +1,135 @@
+h2{
+    padding-top: 1%;
+    margin-left: 1%;
+    color: white;
+}
+.lbl{
+    margin-top: 2%;
+    margin-left: 1%;
+    font-family: Arial;/*tipografia*/
+    font-size: 130%;/*tamanno de letra*/
+    color: white;
+}
+.calendar{
+    margin-top: 2%;
+    margin-right: 10%;
+    font-family: Arial;/*tipografia*/
+    font-size: 130%;/*tamanno de letra*/
+    border-radius: 10pt;
+    
+    border-top-color: white;
+    
+}
+.input{
+    margin-left: 1%;
+    margin-top: 5%;
+    font-family: Arial;/*tipografia*/
+    font-size: 120%;/*tamanno de letra*/
+    border-radius: 8px;
+}
+.btn{
+    margin-left: 1%;
+    margin-top: 5%;
+    font-family: Arial;/*tipografia*/
+    font-size: 120%;/*tamanno de letra*/
+    border-radius: 8px;
+    color: white;/*color de letra*/
+    background-color: #011737;/*color de fondo*/
+    width: 10%;
+    height: 4.5%;
+    border-style: solid;
+    border-radius: 10px;
+}
+.contenedor{
+  margin-top: 0%;
+    background: linear-gradient(to bottom, grey, white);
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+   border-radius: 10px;
+   box-shadow: 10px 10px 10px rgb(44, 44, 44);
+}
+.FooterNegro{/*parte negra del footer*/
+    background-color: black;/*fondo negro*/
+    display: flex;/*vista tipo flex*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    align-items: center;/*alinear items al centro*/
+    color: white;/*color de letra blanca*/
+    font-family: Arial;/*tipografia*/
+    font-size: 130%;/*tamanno de letra*/
+}
+section{
+    background-image: url(../img/img3.jpg);
+}
+.mensaje{
+    margin-top: 1%;
+    margin-left: 1%;
+    color: rgb(168, 3, 3);
+    font-family: Arial;/*tipografia*/
+    font-size: 150%;
+}
+
+.separar{
+   margin-left: 1%;
+    
+}
+/*css para check box como interruptor*/
+/* Formateamos el label que servirá de contenedor */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+   
+  /* Ocultamos el checkbox html */
+  .switch input {
+    display:none;
+  }
+   
+  /* Formateamos la caja del interruptor sobre la cual se deslizará la perilla de control o slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(92, 92, 92);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+   
+  /* Pintamos la perilla de control o slider usando el selector before */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+   
+  /* Cambiamos el color de fondo cuando el checkbox esta activado */
+  input:checked + .slider {
+    background-color: #011737;
+  }
+   
+  /* Deslizamos el slider a la derecha cuando el checkbox esta activado */ 
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+   
+  /* Aplicamos efecto de bordes redondeados en slider y en el fondo del slider */
+  .slider.round {
+    border-radius: 34px;
+  }
+   
+  .slider.round:before {
+    border-radius: 50%;
+  }

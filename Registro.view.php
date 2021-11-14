@@ -73,6 +73,8 @@ include("includes/header.php");//includ de el header
         <br>
         <br>
         <br>
+        <br>
+        <br>
          <br>
          <br>
          <br>
