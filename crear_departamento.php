@@ -7,12 +7,27 @@
     <div class="contenedor">
         <div class="areas">
             <label for="cars">Seleccione el area:</label>
+
             <select name="areas" id="area">
-                <option value="volvo">a</option>
-                <option value="saab">b</option>
-                <option value="mercedes">c</option>
-                <option value="audi">d</option>
-            </select>
+            <option value="" selected="seleccionar">Areas</option>
+            <?php
+
+                # Carga el select de html
+
+                require ('database/db.php');
+                $stmt = $db_connection->prepare("CALL SelAreas();");
+                $stmt->execute();
+                $getArea = $stmt->get_result();
+                $qtyResults = $getArea->num_rows;
+                $db_connection->close();
+                while ($row = mysqli_fetch_array($getArea)) { ?>
+                <option value="volvo"><?php echo $row['nombre_area_aplicacion'] ?></option>  
+              <?php }?> 
+         
+                ?>
+                </select>
+
+
         </div>
         <div class="contenedor2">
             <div class="nombre">
@@ -30,6 +45,3 @@
 </form>
 
 
-
-
-<?php include("includes/footer.php") ?>

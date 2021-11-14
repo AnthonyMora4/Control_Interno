@@ -39,6 +39,21 @@
     font-size: 120%;
     text-align: center;
 }
+.titulo{
+    font-size: 25px;
+    padding:15px 15px;
+}
+.rol{
+    font-size: 20px;
+    padding:15px 15px;
+
+}
+
+@media screen {
+    .contenedor{
+        padding-bottom: 30%;
+    }
+}
 
 @media screen and (max-width:800px){
   
@@ -70,6 +85,12 @@
     
 }
 @media screen and (max-width:360px){
+
+    .titulo{
+        font-size: 15px;
+        padding:10px 10px;
+        text-align: center;
+    }
   
     .nombre{
         max-width: 100%;

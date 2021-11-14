@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.select{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin:0 auto;
+    text-align:center;
+    left: 40%;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.ejes{
+    font-size: 40px;
+}
+.areas{
+    width: 100%; 
+    margin-top: 20px;  
+    margin-bottom: 20px;  
+}
+.contenedor{
+    display: block;
+    width:100%;
+}
+.tabla{
+    margin-top: 200px;
+    margin-left: 400px;   
+}
+.Entradas{
+    height: 60px;
+    border-style: solid;
+    border-radius: 10px;
+    font-family: Arial;
+    font-size: 120%;
+    text-align: left;
+}
+
+textarea#styled {
+	width: 80%;
+	height: 80px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+
+.abajo{
+
+    background: rebeccapurple;
+    margin-bottom: 40%;
+}

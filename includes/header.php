@@ -17,7 +17,7 @@
 		<li><a href="crear_area.php">Gestión Areas</a></li>
 		<li><a href="crear_departamento.php">Gestión Departamentos</a></li>
 		<li><a href="#">Asignación de Evidencias</a></li>
-		<li><a href="#">Gestión Evaluación</a></li>
+		<li><a href="crear_evaluacion.php">Gestión Evaluación</a></li>
 		<li><a href="#">Asignación Periodos</a></li>
 		<li><a href="#">Iniciar Sesión</a></li>
 		<li><a href="#">Configuración</a></li>

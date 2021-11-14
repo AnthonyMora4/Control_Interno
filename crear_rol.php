@@ -20,6 +20,10 @@ $db_connection->close();
 ?>
 
 
+<div class="titulo">
+    <h1 class="m-0">Gestión de Roles</h1>
+</div>
+
 <form action="bll/nuevo_rol.php" method="post">
   <div class="contenedor">
     <div class="nombre">
@@ -45,7 +49,7 @@ $db_connection->close();
       <div class="col col-1"> <?php echo $row['id_rol']?> </div>
         <div class="col col-2"> <?php echo $row['nombre_rol']?> </div>
         <div class="col col-3">
-          <a href="modificar_permisos.php"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <a href="modificar_permisos.php?id_rol=<?php echo $row['id_rol']?>&nombre_rol=<?php echo $row['nombre_rol']?>"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <circle cx="10" cy="10" r="7" />
               <line x1="21" y1="21" x2="15" y2="15" />
