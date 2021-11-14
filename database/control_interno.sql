@@ -7,6 +7,7 @@ CREATE TABLE areas_aplicacion(
     siglas_area_aplicacion varchar(10)
 );
 
+
 CREATE TABLE departamentos(
     id_departamento int AUTO_INCREMENT PRIMARY KEY,
     nombre_departamento  varchar(50),
@@ -49,13 +50,13 @@ CREATE TABLE usuarios(
 
 CREATE TABLE componentes(
     id_componente int AUTO_INCREMENT PRIMARY KEY,
-    nombre_componente varchar(30)
+    nombre_componente varchar(70)
 );
 CREATE TABLE ejes(
     id_eje int AUTO_INCREMENT PRIMARY KEY,
-    nombre_eje varchar(30),
+    nombre_eje varchar(80),
     id_componente int,
-    FOREIGN KEY (id_componente)REFERENCES roles (id_componente)
+    FOREIGN KEY (id_componente)REFERENCES ejes (id_componente)
 );
 
 CREATE TABLE evaluaciones(
@@ -66,8 +67,6 @@ CREATE TABLE evaluaciones(
     opcion varchar(2),
     id_eje int,
     id_departamento int,
-
-    FOREIGN KEY (id_opcion)REFERENCES opciones (id_opcion),
     FOREIGN KEY (id_eje)REFERENCES ejes (id_eje),
     FOREIGN KEY (id_departamento)REFERENCES departamentos (id_departamento) 
 );
@@ -105,6 +104,8 @@ CREATE PROCEDURE SelRoles ()
 	END//
 
 DELIMITER ;
+
+
 
 
 DELIMITER //
@@ -186,6 +187,7 @@ DELIMITER ;
 
 
 
+
 DELIMITER //
 
 CREATE PROCEDURE InsArea (IN nombre_area VARCHAR(50),IN siglas_area VARCHAR(10))
@@ -201,7 +203,7 @@ CREATE PROCEDURE InsArea (IN nombre_area VARCHAR(50),IN siglas_area VARCHAR(10))
 DELIMITER ;
 
 DELIMITER //
-///////////////////////////////////////////////////////////////////////////////////
+
 CREATE PROCEDURE InsEvaluacionP (IN criterio VARCHAR(300),IN estado int, IN evidencia_re VARCHAR(300),IN idepto int, IN ideje int, IN opc varchar(2))
 
     BEGIN
@@ -213,6 +215,8 @@ CREATE PROCEDURE InsEvaluacionP (IN criterio VARCHAR(300),IN estado int, IN evid
     END//
 
 DELIMITER ;
+
+
 
 DELIMITER //
 
@@ -235,3 +239,41 @@ CREATE PROCEDURE SelEjesPorComponente (IN idComponente INT)
 	END//
 
 DELIMITER ;
+
+
+
+USE control_interno;
+
+INSERT INTO componentes (nombre_componente) VALUES ('Ambiente de control');
+INSERT INTO componentes (nombre_componente) VALUES ('Valoracion del riesgo');
+INSERT INTO componentes (nombre_componente) VALUES ('Actividades de control');
+INSERT INTO componentes (nombre_componente) VALUES ('Sistemas de informacion');
+INSERT INTO componentes (nombre_componente) VALUES ('Seguimiento del SCI');
+
+
+USE control_interno;
+
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Compromiso', 1);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Etica', 1);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Personal', 1);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Estructura', 1);
+
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Marco orientador', 2);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Herramienta para la administracion de la informacion', 2);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Funcionamiento del SEVRI', 2);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Documentacion y comunicacion', 2);
+
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Caracteristicas', 3);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Alcance', 3);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Formalidad', 3);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Aplicacion', 3);
+
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Alcance de los sistemas de informacion', 4);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Calidad de la informacion', 4);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Calidad de la comunicacion', 4);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Control de los sistemas de informacion', 4);
+
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Participantes', 5);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Formalidad', 5);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Alcance', 5);
+INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Contribucion a la mejora del sistema de control interno', 5);
