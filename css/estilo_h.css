@@ -29,6 +29,8 @@ body{
     visibility: hidden;
     opacity: 0;
     transition: opacity 1.5s;
+    list-style: none;
+
 }
 
     .submenu li a {

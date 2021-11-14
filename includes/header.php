@@ -19,8 +19,8 @@
 		<li><a href="#">Asignación de Evidencias</a>
 			<ul class="submenu">
 				<li><a href="#">Crear evaluacion</a></li>
-				<li><a href="#">Responder evaluacion</a></li>
-				<li><a href="#">Revisar Evaluaciones</a></li>
+				<li><a href="responder_evaluacion_view.php">Responder evaluacion</a></li>
+				<li><a href="#">Revisar evaluaciones</a></li>
 			</ul>	
 		</li>
 
