@@ -7,7 +7,6 @@ CREATE TABLE areas_aplicacion(
     siglas_area_aplicacion varchar(10)
 );
 
-
 CREATE TABLE departamentos(
     id_departamento int AUTO_INCREMENT PRIMARY KEY,
     nombre_departamento  varchar(50),
@@ -108,8 +107,6 @@ CREATE PROCEDURE SelRoles ()
 DELIMITER ;
 
 
-
-
 DELIMITER //
 
 CREATE PROCEDURE InsRol (IN rol VARCHAR(30))
@@ -189,7 +186,6 @@ DELIMITER ;
 
 
 
-
 DELIMITER //
 
 CREATE PROCEDURE InsArea (IN nombre_area VARCHAR(50),IN siglas_area VARCHAR(10))
@@ -218,8 +214,6 @@ CREATE PROCEDURE InsEvaluacionP (IN criterio VARCHAR(300),IN estado int, IN evid
 
 DELIMITER ;
 
-
-
 DELIMITER //
 
 CREATE PROCEDURE SelPermisosPorRol (IN idRolIN INT)
@@ -241,11 +235,3 @@ CREATE PROCEDURE SelEjesPorComponente (IN idComponente INT)
 	END//
 
 DELIMITER ;
-
-
-
-
-
-
-
-

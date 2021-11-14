@@ -10,6 +10,7 @@ body{
     font-family: Arial;
 }
 
+
 .menu{
     background: #011737;
     height: 75px;
@@ -18,9 +19,35 @@ body{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #fff;
-    box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
-    
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .6);  
 }
+
+.submenu {
+    position: absolute;
+    background: #011737;
+    width:12%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+    .submenu li a {
+        display: block;
+        padding: 15px;
+        color: #fff;
+        font-family: 'Open sans';
+        text-decoration: none;
+    }
+
+.menu li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
 .logo{
     color: white;
     font-size: 25px;
