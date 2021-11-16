@@ -1,0 +1,89 @@
+.table-row .col-3{
+    height: 150px;
+}
+#comentario{
+    height: 100%;
+    width: 100%;
+}
+
+select{
+    margin-left: 1%;
+    font-family: Arial;
+    font-size: 110%;
+}
+h4{
+    font-family: Arial;
+    margin-left: 1%;
+    font-size: 110%;
+}
+.input{
+    position: absolute;
+  left: 80%;
+  margin-top: 10%;
+  width: 10%;
+  height: 4.5%;
+  border-style: solid;
+  border-radius: 10px;
+  font-family: Arial;
+  font-size: 120%;
+  color: white; /*color de letra*/
+  background-color: #011737; /*color de fondo*/
+}
+.table-row{
+    font-family: Arial;
+  font-size: 120%;
+}
+@media screen and (max-width:1750px) {
+    .input{
+        font-size: 100%;
+        width: 15%;
+    }
+}
+@media screen and (max-width:1500px) {
+    .input{
+        font-size: 100%;
+        width: 20%;
+    }
+    select{
+        width: 20%;
+        font-size: 100%;
+        margin-left: 2%;
+    }
+    h4{
+        font-family: Arial;
+        margin-left: 2%;
+        font-size: 110%;
+    }
+}
+@media screen and (max-width:800px) {
+    .input{
+        left: 60%;
+        font-size: 80%;
+        width: 35%;
+    }
+    select{
+        width: 30%;
+        margin-left: 3%;
+    }
+    h4{
+        font-family: Arial;
+        margin-left: 3%;
+        font-size: 110%;
+    }
+}
+@media screen and (max-width:400px) {
+    .input{
+        left: 60%;
+        font-size: 80%;
+        width: 45%;
+    }
+    h4{
+        font-family: Arial;
+        margin-left: 5%;
+        font-size: 110%;
+    }
+    select{
+        width: 35%;
+        margin-left: 5%;
+    }
+}

@@ -1,0 +1,78 @@
+.Entradas {
+  /*estilos de imputs*/
+  position: absolute; /*posicion*/
+  left: 35%; /*centrado con lef*/
+  margin-top: 10%; /*espacion dentro del section arriba*/
+  width: 30%; /*ancho*/
+  height: 4.5%; /*alto*/
+  border-style: solid; /*estilo de borde*/
+  border-radius: 10px; /*redondeado del borde*/
+  font-family: Arial; /*tipografia*/
+  font-size: 120%; /*tamanno de letra*/
+}
+
+.Boton {
+  position: absolute;
+  left: 55%;
+  margin-top: 10%;
+  width: 10%;
+  height: 4.5%;
+  border-style: solid;
+  border-radius: 10px;
+  font-family: Arial;
+  font-size: 120%;
+  color: white; /*color de letra*/
+  background-color: #011737; /*color de fondo*/
+}
+
+/*Posiciones a los inputs y boton*/
+
+#Nombre {
+  position: absolute;
+  top: 20%;
+}
+
+#Apellido {
+  position: absolute;
+  top: 29%;
+}
+
+#Telefono {
+  position: absolute;
+  top: 38%;
+}
+
+#Password {
+  position: absolute;
+  top: 48%;
+}
+
+#Boton {
+  position: absolute;
+  top: 58%;
+}
+
+/*responsibidad del section*/
+@media screen and (max-width:858px) {
+    section .Entradas{
+        position: absolute;
+        left: 35%;
+        margin-top: 10%;
+        width: 50%;
+        height: 4.5%;
+        border-style: solid;
+        border-radius: 10px;
+        font-family: Arial;
+         font-size: 100%;
+     }
+    }
+
+.FooterNegro{/*parte negra del footer*/
+    margin-top: 40.5%;
+    background-color: black;/*fondo negro*/
+    display: flex;/*vista tipo flex*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    align-items: center;/*alinear items al centro*/
+    color: white;/*color de letra blanca*/
+    height: 50px;
+}

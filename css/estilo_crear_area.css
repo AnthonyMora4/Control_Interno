@@ -40,6 +40,10 @@
     font-size: 120%;
     text-align: center;
 }
+.titulo{
+    font-size: 25px;
+    padding:15px 15px;
+}
 
 @media screen and (max-width:800px){
   
@@ -68,6 +72,7 @@
         margin: auto 0;
  
     }
+
     
 }
 @media screen and (max-width:360px){

@@ -1,0 +1,42 @@
+.centrar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 45%;
+    margin-top: 5%;
+}
+
+.Boton {
+    position: absolute;
+    left: 55%;
+    margin-top: 2%;
+    width: 10%;
+    height: 4.5%;
+    border-style: solid;
+    border-radius: 10px;
+    font-family: Arial;
+    font-size: 120%;
+    color: white; /*color de letra*/
+    background-color: #011737; /*color de fondo*/
+  }
+
+  .FooterNegro{/*parte negra del footer*/
+    margin-top: 21%;
+    background-color: black;/*fondo negro*/
+    display: flex;/*vista tipo flex*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    align-items: center;/*alinear items al centro*/
+    color: white;/*color de letra blanca*/
+    height: 50px;
+  }
+
+.containerr{
+    margin-left: 3%;
+    margin-top: 2%;
+}
+.mensaje{
+    margin-left: 5%;
+    color: red;
+    font-family: Arial;
+    font-size: 120%;
+}

@@ -94,6 +94,84 @@ CREATE evaluacion_final(
     FOREIGN KEY (id_periodo)REFERENCES periodos (id_periodo) 
 );
 
+CREATE TABLE solicitudes_rol(
+solicitudes_rol int AUTO_INCREMENT PRIMARY KEY,
+correo_usuario varchar(100),
+id_rol_actual int,
+id_rol_solicitado int,
+id_departamento int,
+FOREIGN KEY (correo_usuario) REFERENCES usuarios (correo_usuario),
+FOREIGN KEY (id_departamento) REFERENCES departamentos (id_departamento)
+);
+
+
+CREATE TABLE EvaluacionRespondida(
+    id_evaluacion int AUTO_INCREMENT PRIMARY Key,
+    estado_evidencia int,
+    evidencia VARCHAR(100),
+    id_eje int,
+    opcion varchar(12),
+    puntuaje int,
+    encargado_correo VARCHAR(150)
+);
+
+
+CREATE TABLE Comentarios_evaluaciones(
+id_comentario int AUTO_INCREMENT PRIMARY KEY,
+id_eje int,
+id_componente int,
+comentario varchar(500),
+FOREIGN KEY (id_eje) REFERENCES ejes (id_eje),
+FOREIGN KEY (id_componente) REFERENCES componentes (id_componente)
+);
+
+DELIMITER //
+
+CREATE PROCEDURE InsDep (IN nombre_departamento VARCHAR(50),IN siglas_dep VARCHAR(10))
+
+    BEGIN
+
+         INSERT INTO departamentos(nombre_departamento,siglas_departamento)
+         VALUES(nombre_departamento,siglas_dep);
+
+    END//
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE RegistrarRespuestaEvidencia(IN estado_evidencia INT,IN evidencia VARCHAR(100),IN id_eje INT,
+IN  opcion VARCHAR(12),IN puntuaje int , IN encargado_correo VARCHAR(150))
+BEGIN
+
+    INSERT INTO EvaluacionRespondida(estado_evidencia,evidencia,id_eje,opcion,puntuaje,encargado_correo)
+    VALUES(estado_evidencia,evidencia,id_eje,opcion,puntuaje,encargado_correo);
+END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE SelobtenerPreguntas (IN id INT)
+
+	BEGIN
+       SELECT criterios,estado_evidencia,evidencia_requerida,
+        id_eje,opcion FROM evaluaciones WHERE id_departamento = id;
+	END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE SelidDeparamentoPorUsuario (IN correo VARCHAR(100))
+
+	BEGIN
+       SELECT id_departamento FROM usuarios WHERE correo_usuario = correo;
+	END//
+
+DELIMITER ;
+
 /*Procedimientos almacenados*/
 
 DELIMITER //
@@ -101,6 +179,15 @@ DELIMITER //
 CREATE PROCEDURE SelRoles ()
 	BEGIN
          SELECT id_rol,nombre_rol FROM roles;
+	END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE SelRolPorID (IN idrol INT)
+	BEGIN
+         SELECT id_rol,nombre_rol FROM roles WHERE id_rol = idrol;
 	END//
 
 DELIMITER ;
@@ -185,6 +272,24 @@ CREATE PROCEDURE SelDeptoPorNombre(IN nombre varchar(50))
 
 DELIMITER ;
 
+DELIMITER //
+
+CREATE PROCEDURE SelRolPorNombre(IN rol varchar(30))
+	BEGIN
+         SELECT id_rol FROM  roles WHERE nombre_rol= rol;
+	END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE DelSolicitud(IN usuario varchar(100))
+	BEGIN
+         Delete  FROM  solicitudes_rol WHERE correo_usuario= usuario;
+	END//
+
+DELIMITER ;
+
 
 
 
@@ -241,6 +346,92 @@ CREATE PROCEDURE SelEjesPorComponente (IN idComponente INT)
 DELIMITER ;
 
 
+DELIMITER //
+
+CREATE PROCEDURE SelCountEjes (IN idEje INT, IN idDepto INT)
+
+	BEGIN
+       SELECT COUNT(*) AS 'conteo' FROM evaluaciones WHERE id_eje = idEje and id_departamento = idDepto;
+	END//
+
+DELIMITER ;
+USE control_interno;
+SELECT id_eje FROM ejes WHERE id_eje <> 5
+
+DELIMITER //
+
+CREATE PROCEDURE SelEjesDiferenteUno (IN idEje INT, IN idCompo INT)
+
+	BEGIN
+       SELECT nombre_eje FROM ejes WHERE id_componente = idCompo AND id_eje <> idEje;
+	END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE SelComponentePorId (IN idCompo INT)
+
+	BEGIN
+       SELECT nombre_componente FROM componentes WHERE id_componente = idCompo;
+	END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE SelUsuariosPorDepartamento (IN idDepto INT)
+
+	BEGIN
+       SELECT a.nombre_usuario,a.apellidos_usuario,a.correo_usuario,b.nombre_rol,c.nombre_departamento FROM usuarios a INNER JOIN roles b ON b.id_rol = a.id_rol INNER JOIN departamentos c ON a.id_departamento = c.id_departamento WHERE a.id_departamento = idDepto;
+	END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE genSelAreasByRol (IN idRolIN INT)
+      SELECT c.idCuentaPresupuestaria,c.nombreCuenta,u.idUEjecutora,u.nombreUEjecutora,m.idMeta,m.nombre FROM cuentapresupuestaria c INNER JOIN uejecutora u ON c.idUEjecutora = u.idUEjecutora INNER JOIN metas m  ON m.idMeta = c.idMeta WHERE u.idUEjecutora = idUEjecutoraIN;
+	BEGIN
+       SELECT a.idArea,a.areaDescripcion From area a INNER JOIN areasxrol ar ON a.idArea = ar.idArea INNER JOIN roles r ON r.idRol = ar.idRol WHERE r.idRol = idRolIN;
+	END//
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE genSelSolicitudesRol ()
+
+    BEGIN
+      SELECT solicitudes_rol, correo_usuario, id_rol_actual, id_rol_solicitado, id_departamento FROM solicitudes_rol;
+
+	END//
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE SelDeprtamentoPorId (IN idDepto INT)
+
+	BEGIN
+       SELECT nombre_departamento FROM departamentos WHERE id_departamento = idDepto;
+	END//
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE UpdRolUsuario (IN idusuario VARCHAR(100),IN idrol int)
+
+	BEGIN
+       UPDATE usuarios  SET id_rol= idrol WHERE correo_usuario = idusuario;
+	END//
+
+DELIMITER ;
+
+
 
 USE control_interno;
 
@@ -277,3 +468,11 @@ INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Participantes', 5);
 INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Formalidad', 5);
 INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Alcance', 5);
 INSERT INTO ejes (nombre_eje, id_componente) VALUES ('Contribucion a la mejora del sistema de control interno', 5);
+
+
+USE control_interno;
+INSERT INTO roles (nombre_rol) VALUES ('Administrador');
+INSERT INTO roles (nombre_rol) VALUES ('Director');
+INSERT INTO roles (nombre_rol) VALUES ('Fiscalizador');
+INSERT INTO roles (nombre_rol) VALUES ('Dependencia');
+INSERT INTO roles (nombre_rol) VALUES ('Empleado');

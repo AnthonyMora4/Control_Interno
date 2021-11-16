@@ -1,0 +1,93 @@
+section{
+    width: 100%;/*ancho*/
+    height: 640px;/*alto del section*/
+}
+body{
+    height: 100%;/*alto del body*/
+}
+section .Entradas{/*estilos de imputs*/
+   position: absolute;/*posicion*/
+   left: 35%;/*centrado con lef*/
+   margin-top: 10%;/*espacion dentro del section arriba*/
+   width: 30%;/*ancho*/
+   height: 4.5%;/*alto*/
+   border-style: solid;/*estilo de borde*/
+   border-radius: 10px;/*redondeado del borde*/
+   font-family: Arial;/*tipografia*/
+    font-size: 120%;/*tamanno de letra*/
+}
+section .Boton{
+    position: absolute;
+    left: 55%;
+    margin-top: 10%;
+    width: 10%;
+    height: 4.5%;
+    border-style: solid;
+    border-radius: 10px;
+    font-family: Arial;
+    font-size: 120%;
+    color: white;/*color de letra*/
+    background-color: #011737;/*color de fondo*/
+ }
+ .FooterNegro{/*parte negra del footer*/
+    margin-top: 10.5%;
+    background-color: black;/*fondo negro*/
+    display: flex;/*vista tipo flex*/
+    justify-content: center;/*para justificar el contenido al centro*/
+    align-items: center;/*alinear items al centro*/
+    color: white;/*color de letra blanca*/
+    height: 50px;
+}
+/*responsibidad del section*/
+@media screen and (max-width:858px) {
+    section .Entradas{
+        position: absolute;
+        left: 35%;
+        margin-top: 10%;
+        width: 50%;
+        height: 4.5%;
+        border-style: solid;
+        border-radius: 10px;
+        font-family: Arial;
+         font-size: 100%;
+     }
+    section .Boton{
+        position: absolute;
+        left: 65%;
+        margin-top: 10%;
+        width: 25%;
+        height: 4.5%;
+        border-style: solid;
+        border-radius: 10px;
+        font-family: Arial;
+        font-size: 100%;
+        color: white;
+        background-color: #011737;
+     }
+    section .error{
+        color: red;
+        font-family: Arial;
+        font-size: 100%;
+        position: absolute;
+        left: 2%;
+        margin-top: 7%;
+        
+    }
+}
+/*estilos del mensaje de confirmacion*/
+#mensaje{
+    font-family: Arial;
+    font-size: 150%;
+    color: red;
+}
+/*estilos de mensajes de error*/
+.error{
+    color: red;
+    font-family: Arial;
+    font-size: 120%;
+    position: absolute;
+    left: 66%;
+    margin-top: 11%;
+    display: none;
+    
+}

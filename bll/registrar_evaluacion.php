@@ -5,7 +5,7 @@
 
 <?php
 $select1 = $_POST['select1'];
-//$select2 = $_POST['select2'];
+$idcomponente = $_POST['comp'];
 $nombre_eje  = $_POST['nombreEje'];
 $txt1  = $_POST['txt1'];
 $txt2  = $_POST['txt2'];
@@ -40,9 +40,6 @@ $qtyResults = $getEje->num_rows;
 while ($row = mysqli_fetch_array($getEje)) {
     $id_eje =$row['id_eje'];
 }
-var_dump($id_eje);
-var_dump($_POST['ch1']);
-
 $db_connection->close();
 
 //{}/////////////////////////////////////////////////////////////////////
@@ -135,6 +132,13 @@ if(isset($_POST['ch5']) && isset($_POST['ch5'])==1){
     $stmt->execute();
     $db_connection->close();
 }
+
+echo '<div class="alert alert-success">Creado correctamente, en 3 segundos será redireccionado</div>';
+header("Refresh: 2; URL=http://localhost/Final/crear_evaluacion.php");
+
+
+
+
 /*if(isset($_POST['ch1']) && isset($_POST['ch1'])==1){
     $ch1  = $_POST['ch1'];
    
