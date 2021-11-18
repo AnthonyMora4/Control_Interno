@@ -1,6 +1,6 @@
 <?php include("includes/header.php") ?>
 
-<link rel="stylesheet" href="css/tablacss/style.css">
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/Estilo_menu_lateral.css">
 <link rel="stylesheet" href="css/Estilo_SolicitarRol.css">
 <?php session_start();?>
@@ -58,7 +58,7 @@ $InfoUser = $stmt->get_result();
     </ul>
   </div>
 
-<form action="php/SolicitarRol.php" method="POST">
+<form action="bll/SolicitarRol.php" method="POST">
 <input type="hidden" id="correos" name="correos" value="<?php echo $correo?>">
 <input type="hidden" id="idRolActual" name="idRolActual" value="<?php echo $id_rol_Actual?>">
 <input type="hidden" id="iddepto" name="iddepto" value="<?php echo $id_depto?>">

@@ -20,7 +20,11 @@
 			<label class="logo">Control Interno</label>
 			<ul class="menu_items">
 				<li class="active"><a href="index.php"> Inicio</a></li>
-				<li><a href="crear_rol.php">Roles</a></li>
+				<li><a href="crear_rol.php">Roles</a>
+				<ul class="submenu">
+						<li><a href="asignar_rol.php">Asignar roles</a></li>
+					</ul>
+			</li>
 				<li><a href="crear_area.php">Areas</a></li>
 				<li><a href="crear_departamento.php">Departamentos</a></li>
 				</li>

@@ -29,11 +29,11 @@ if(isset($_POST['comentario_eje4']) && $_POST['comentario_eje4']!=""){
     $consulta="INSERT INTO comentarios_evaluaciones (`id_comentario`, `id_eje`, `id_componente`, `comentario`) VALUES (NULL, '$id_eje1', '$id_componente', '$comentario4')";
     $resultado=mysqli_query($db_connection,$consulta);//al ser un select guarda un 1 o mas si no hay errores y un 0 si los hay
 }
-echo '<div class="alert alert-danger"><h3>Comentario ingresado, en 3 segundos será redireccionado</h3></div>';
-    header("Refresh: 2; URL=http://localhost/GitProyectoASPW/Control_Interno/Inspeccion_evaluacion.view.php?id_depto=$id_depto&depa=$depa");  
+echo '<div class="alert alert-succes"><h3>Comentario ingresado, en 3 segundos será redireccionado</h3></div>';
+    header("Refresh: 2; URL=http://localhost/Final/Inspeccion_evaluacion.view.php?id_depto=$id_depto&depa=$depa");  
 }else{
     echo '<div class="alert alert-danger"><h3>Error al insertar los datos los datos, en 3 segundos será redireccionado</h3></div>';
-    header("Refresh: 2; URL=http://localhost/GitProyectoASPW/Control_Interno/Inspeccion_evaluacion.view.php?id_depto=$id_depto&depa=$depa");  
+    header("Refresh: 2; URL=http://localhost/Final/Inspeccion_evaluacion.view.php?id_depto=$id_depto&depa=$depa");  
 }
 
 

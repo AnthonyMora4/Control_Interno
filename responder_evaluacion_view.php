@@ -57,7 +57,7 @@
    if($array[10] == 1){$obli4 = "obligatoria";}else{$obli4= "";}
    if($array[13] == 1){$obli5 = "obligatoria";}else{$obli5 = "";}    
 
-   if($array[16] == 1){$obli6 = "obligatoria";}else{$obli6 = "";}  
+   /*if($array[16] == 1){$obli6 = "obligatoria";}else{$obli6 = "";}  
    if($array[19] == 1){$obli7 = "obligatoria";}else{$obli7 = "";}  
    if($array[22] == 1){$obli8 = "obligatoria";}else{$obli8 = "";}  
    if($array[25] == 1){$obli9 = "obligatoria";}else{$obli9 = "";}  
@@ -68,7 +68,7 @@
    if($array[34] == 1){$obli12 = "obligatoria";}else{$obli12 = "";}  
    if($array[37] == 1){$obli13 = "obligatoria";}else{$obli13 = "";}  
    if($array[40] == 1){$obli14 = "obligatoria";}else{$obli14 = "";}  
-   if($array[43] == 1){$obli15 = "obligatoria";}else{$obli15 = "";}  
+   if($array[43] == 1){$obli15 = "obligatoria";}else{$obli15 = "";}  */
 
   ?>
 <?php
@@ -89,8 +89,7 @@ if(!isset($_GET["ocultar"])){
        <div class="col col-1">Opciones</div>
        <div class="col col-3">Criterio</div>
        <div class="col col-2">Señale la opcion que describa mejor su situacion <br>
-        actual o la de su entidad marcando la celda <br>
-         correspondiente en la columna de la derecha</div>
+        actual o la de su entidad </div>
        <div class="col col-4">Evidencia</div>
      </li>
    
@@ -156,67 +155,11 @@ if(!isset($_GET["ocultar"])){
 <!---Tabla 2-->
 
 </form>
-<?php }elseif(isset($_GET['ocultar']) && isset($_GET['ocultar']) == 1){ ?>
-<form action="bll/responder_evaluacion.php?id=<?php echo 2;?>"  action="POST">
-<h2>Tabla de Información Personal</h2>
-     
-   <ul class="responsive-table">
-     <li class="table-header">
-       <div class="col col-1">Opciones</div>
-       <div class="col col-2">Señale la opcion que describa mejor su situacion actual o la de su entidad marcando la celda correspondiente en la columna de la derecha</div>
-       <div class="col col-3">Marcar</div>
-       <div class="col col-4">Evidencia</div>
-     </li>
-   
-     <li class="table-row">
-       <div class="col col-1" data-label="Job Id">a</div>
-       <div class="col col-2" data-label="Customer Name"><textarea name="txt1" id="styled" onfocus="this.value=''; setbg('#e5fff3');" disabled="true" onblur="setbg('white')"><?php echo $array[15]; ?></textarea></div>
-       <div class="col col-3" data-label="Payment Status">
-       <label class="b-contain"><span>Marcar</span><input type="checkbox" name="ch1" value="1"><div class="b-input"></div></label>
-       </div>
-       <div class="col col-4" data-label="Amount"><textarea name="txt2" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')"placeholder="Ingrese el link de la evidencia"><?php echo $obli6; ?></textarea></div>
-       
-     </li>
-     <li class="table-row">
-       <div class="col col-1" data-label="Job Id">b</div>
-       <div class="col col-2" data-label="Customer Name"><textarea name="txt3" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white') " disabled="true"><?php echo $array[18]; ?></textarea></div>
-       <div class="col col-3" data-label="Payment Status">
-       <label class="b-contain"><span>Marcar</span><input type="checkbox" name="ch2"  value="1"><div class="b-input"></div></label>
-       </div>
-       <div class="col col-4" data-label="Amount"><textarea name="txt4" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" placeholder="Ingrese el link de la evidencia"><?php echo $obli7; ?></textarea></div>
-     </li>
-     <li class="table-row">
-       <div class="col col-1" data-label="Job Id">c</div>
-       <div class="col col-2" data-label="Customer Name"><textarea name="txt5" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" disabled="true"><?php echo $array[21]; ?></textarea></div>
-       <div class="col col-3" data-label="Payment Status">
-       <label class="b-contain"><span>Marcar</span><input type="checkbox" name="ch3"  value="1"><div class="b-input"></div></label>
-       </div>
-       <div class="col col-4" data-label="Amount"><textarea name="txt6" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" placeholder="Ingrese el link de la evidencia"><?php echo $obli8; ?></textarea></div>
-     </li>
-     <li class="table-row">
-       <div class="col col-1" data-label="Job Id">d</div>
-       <div class="col col-2" data-label="Customer Name"><textarea name="txt7" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" disabled="true"><?php echo $array[24]; ?></textarea></div>
-       <div class="col col-3" data-label="Payment Status">
-       <label class="b-contain"><span>Marcar</span><input type="checkbox" name="ch4"  value="1"><div class="b-input"></div></label>
-       </div>
-       <div class="col col-4" data-label="Amount"><textarea name="txt8" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" placeholder="Ingrese el link de la evidencia"><?php echo $obli9; ?></textarea></div>
-     </li>
-     <li class="table-row">
-       <div class="col col-1" data-label="Job Id">e</div>
-       <div class="col col-2" data-label="Customer Name"><textarea name="txt9" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" disabled="true"><?php echo $array[27]; ?></textarea></div>
-       <div class="col col-3" data-label="Payment Status">
-       <label class="b-contain"><span>Marcar</span><input type="checkbox" name="ch5"  value="1"><div class="b-input"></div></label>
-       </div>
-       <div class="col col-4" data-label="Amount"><textarea name="txt10" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" placeholder="Ingrese el link de la evidencia"><?php echo $obli10; ?></textarea></div>
-     </li>
-     <input type="submit">
+<?php }?>
 
-
-</form>
 
 <!--(3 tabla aqui)-->
 
 
-<?php }?>
 
 <?php include("includes/footer.php") ?>

@@ -2,7 +2,7 @@
 include("includes/header.php");//includ de el header
 ?>
 <link rel="stylesheet" href="css/Estilo_inspeccion.css">
-<link rel="stylesheet" href="css/tablacss/style.css">
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/estilo_select.css">
 
 <?php
@@ -40,7 +40,7 @@ include('database/db.php');
     <input class="input" type="hidden" id="id_componente5" name="id_componente5" value="<?php echo   $datosComponente[8]?>" >
     <input class="input" type="hidden" id="id_depto" name="id_depto" value="<?php echo   $id_depto?>" >
     
-    <form action="php/CargarTablaInspeccion.php"  method="post">
+    <form action="bll/CargarTablaInspeccion.php"  method="post">
     <input class="input" type="hidden" id="id_depto" name="id_depto" value="<?php echo   $id_depto?>" >
     <input class="input" type="hidden" id="nom_depto" name="nom_depto" value="<?php echo   $Nombre_depto?>" >
 
@@ -54,7 +54,7 @@ include('database/db.php');
     </select>
     <input class="btn" type="submit" id="btncargadatos" name="btncargadatos" value="Cargar datos" >
     </form>
-    <form action="php/Inspeccion_evaluacion.php"  method="post">
+    <form action="bll/Inspeccion_evaluacion.php"  method="post">
     <div class="container">
         <ul class="responsive-table">
           <li id="headertabla" name="headertabla" class="table-header">

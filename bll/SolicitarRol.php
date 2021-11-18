@@ -10,7 +10,7 @@
     $stmt = $db_connection->prepare("INSERT INTO solicitudes_rol VALUES (NULL,'$correo', $idRolActual, $idRolSoli,$idDepto)");
     $stmt->execute();
     echo '<div class="alert alert-success"><h3>Solicitud realizada, en 3 segundos será redireccionado</h3></div>';
-    header("Refresh: 2; URL=http://localhost/GitProyectoASPW/Control_Interno/SolicitarRol.view.php");  
+    header("Refresh: 2; URL=http://localhost/Final/SolicitarRol.view.php");  
  }else{
     echo '<div class="alert alert-danger"><h3>Error,Seleccione el rol a solicitar, 3 segundos será redireccionado</h3></div>';
     header("Refresh: 2; URL=http://localhost/GitProyectoASPW/Control_Interno/SolicitarRol.view.php");

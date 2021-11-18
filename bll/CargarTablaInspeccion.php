@@ -61,23 +61,23 @@ if($datos['nombre_eje']=="Compromiso"){
 }
 }
 $puntaje1=0;
-$puntaje2=0;
-$puntaje3=0;
-$puntaje4=0;
+//$puntaje2=0;
+//$puntaje3=0;
+//$puntaje4=0;
 if(isset($Compromiso[19])){
 
 
 $puntaje1=$Compromiso[3]+$Compromiso[7]+$Compromiso[11]+$Compromiso[15]+$Compromiso[19];
-$puntaje2=$Etica[3]+$Etica[7]+$Etica[11]+$Etica[15]+$Etica[19];
-$puntaje3=$Personal[3]+$Personal[7]+$Personal[11]+$Personal[15]+$Personal[19];
-$puntaje4=$Estructura[3]+$Estructura[7]+$Estructura[11]+$Estructura[15]+$Estructura[19];
+//$puntaje2=$Etica[3]+$Etica[7]+$Etica[11]+$Etica[15]+$Etica[19];
+//$puntaje3=$Personal[3]+$Personal[7]+$Personal[11]+$Personal[15]+$Personal[19];
+//$puntaje4=$Estructura[3]+$Estructura[7]+$Estructura[11]+$Estructura[15]+$Estructura[19];
 
 $CompromisoFinal= array(5);
 $CompromisoFinal[0]=$Compromiso[0];
 $CompromisoFinal[1]='1.'.$Compromiso[1].'<br>2.'.$Compromiso[5].'<br>3.'.$Compromiso[9].'<br>4.'.$Compromiso[13].'<br>5.'.$Compromiso[17];
 $CompromisoFinal[2]='1.'.$Compromiso[2].'<br>2.'.$Compromiso[6].'<br>3.'.$Compromiso[10].'<br>4.'.$Compromiso[14].'<br>5.'.$Compromiso[18];
 $CompromisoFinal[3]=$puntaje1;
-
+/*
 $EticaFinal= array(5);
 $EticaFinal[0]= $Etica[0];
 $EticaFinal[1]='1.'.$Etica[1].'<br>2.'.$Etica[5].'<br>3.'.$Etica[9].'<br>4.'.$Etica[13].'<br>5.'.$Etica[17];
@@ -96,7 +96,7 @@ $EstructuraFinal[0]= $Estructura[0];
 $EstructuraFinal[1]='1.'.$Estructura[1].'<br>2.'.$Estructura[5].'<br>3.'.$Estructura[9].'<br>4.'.$Estructura[13].'<br>5.'.$Estructura[17];
 $EstructuraFinal[2]='1.'.$Estructura[2].'<br>2.'.$Estructura[6].'<br>3.'.$Estructura[10].'<br>4.'.$Estructura[14].'<br>5.'.$Estructura[18];
 $EstructuraFinal[3]= $puntaje4;
-
+*/
 session_start();
 
 $_SESSION['id_componente']=$id_componente;
@@ -106,7 +106,7 @@ $_SESSION['CompromisoFinal1']=$CompromisoFinal[0];
 $_SESSION['CompromisoFinal2']=$CompromisoFinal[1];
 $_SESSION['CompromisoFinal3']=$CompromisoFinal[2];
 $_SESSION['CompromisoFinal4']=$CompromisoFinal[3];
-
+/*
 $_SESSION['eje2']=$id_eje2;
 $_SESSION['EticaFinal1']=$EticaFinal[0];
 $_SESSION['EticaFinal2']=$EticaFinal[1];
@@ -124,11 +124,11 @@ $_SESSION['EstructuraFinal1']=$EstructuraFinal[0];
 $_SESSION['EstructuraFinal2']=$EstructuraFinal[1];
 $_SESSION['EstructuraFinal3']=$EstructuraFinal[2];
 $_SESSION['EstructuraFinal4']=$EstructuraFinal[3];
-
-header("Location: http://localhost/GitProyectoASPW/Control_Interno/Inspeccion_evaluacion.view.php?id_depto=$id_depto&depa=$depa");//redirecciona a la pagina principal
+*/
+header("Location: http://localhost/Final/Inspeccion_evaluacion.view.php?id_depto=$id_depto&depa=$depa");//redirecciona a la pagina principal
 }else{
     echo '<div class="alert alert-danger"><h3>Error al cargar los datos, en 3 segundos será redireccionado</h3></div>';
-    header("Refresh: 2; URL=http://localhost/GitProyectoASPW/Control_Interno/Inspeccion_evaluacion.view.php?id_depto=$id_depto&depa=$depa");  
+    header("Refresh: 2; URL=http://localhost/Final/Inspeccion_evaluacion.view.php?id_depto=$id_depto&depa=$depa");  
 }
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">

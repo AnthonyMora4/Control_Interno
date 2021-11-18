@@ -8,7 +8,7 @@
 
 <?php //SelRolPorID
 require('database/db.php');
-$stmt = $db_connection->prepare("CALL SelDepartamentos();");
+$stmt = $db_connection->prepare("SELECT id_departamento,nombre_departamento FROM departamentos;");
 $stmt->execute();
 $getDepartamento = $stmt->get_result();
 $qtyResults = $getDepartamento->num_rows;
@@ -18,7 +18,7 @@ $db_connection->close();
 if (isset($_GET['idDepto'])) {
     $id_departamento = $_GET['idDepto'];
     require('database/db.php');
-    $stmt = $db_connection->prepare("CALL SelUsuariosPorDepartamento(?);");
+    $stmt = $db_connection->prepare("SELECT a.nombre_usuario,a.apellidos_usuario,a.correo_usuario,b.nombre_rol,c.nombre_departamento FROM usuarios a INNER JOIN roles b ON b.id_rol = a.id_rol INNER JOIN departamentos c ON a.id_departamento = c.id_departamento WHERE a.id_departamento = idDepto;");
     $stmt->bind_param('i', $id_departamento);
     $stmt->execute();
     $departamentos = $stmt->get_result();
@@ -28,7 +28,7 @@ if (isset($_GET['idDepto'])) {
 ?>
 <?php 
 require('database/db.php');
-$stmt = $db_connection->prepare("CALL genSelSolicitudesRol();");
+$stmt = $db_connection->prepare(" SELECT solicitudes_rol, correo_usuario, id_rol_actual, id_rol_solicitado, id_departamento FROM solicitudes_rol;");
 $stmt->execute();
 $solicitudes = $stmt->get_result();
 $qtyResults = $solicitudes->num_rows;
@@ -50,8 +50,8 @@ $db_connection->close();
     <li class="table-row">
         <div class="col col-1" data-label="Usuario"><?php echo($row['correo_usuario']);?></div>
         <?php require('database/db.php');
-            $stmt = $db_connection->prepare("CALL SelRolPorID(?);");
-            $stmt->bind_param('i', $row['id_rol_actual']);
+            $variable=$row['id_rol_actual'];
+            $stmt = $db_connection->prepare("SELECT id_rol,nombre_rol FROM roles WHERE id_rol =  $variable;");
             $stmt->execute();
             $rol = $stmt->get_result();
             $qtyResults = $rol->num_rows;
@@ -61,8 +61,8 @@ $db_connection->close();
             $db_connection->close();?>
         <div class="col col-2" data-label="Rol"><?php echo $idRolActual?></div>
         <?php require('database/db.php');
-            $stmt = $db_connection->prepare("CALL SelRolPorID(?);");
-            $stmt->bind_param('i', $row['id_rol_solicitado']);
+         $rolasosiado=$row['id_rol_solicitado'];
+            $stmt = $db_connection->prepare("SELECT id_rol,nombre_rol FROM roles WHERE id_rol = $rolasosiado;");
             $stmt->execute();
             $rol2 = $stmt->get_result();
             $qtyResults = $rol2->num_rows;

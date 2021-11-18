@@ -16,6 +16,13 @@ CREATE TABLE departamentos(
     FOREIGN KEY (id_area_aplicacion) REFERENCES areas_aplicacion (id_area_aplicacion)
 );
 
+CREATE TABLE metas(
+id_metas int AUTO_INCREMENT PRIMARY KEY,
+meta varchar(500),
+id_departamento int,
+FOREIGN KEY (id_departamento) REFERENCES departamentos (id_departamento)
+);
+
 CREATE TABLE roles(
     id_rol int AUTO_INCREMENT PRIMARY KEY,
     nombre_rol varchar(30)
@@ -48,52 +55,6 @@ CREATE TABLE usuarios(
     FOREIGN KEY (id_departamento) REFERENCES departamentos (id_departamento)
 );
 
-CREATE TABLE componentes(
-    id_componente int AUTO_INCREMENT PRIMARY KEY,
-    nombre_componente varchar(70)
-);
-CREATE TABLE ejes(
-    id_eje int AUTO_INCREMENT PRIMARY KEY,
-    nombre_eje varchar(80),
-    id_componente int,
-    FOREIGN KEY (id_componente)REFERENCES ejes (id_componente)
-);
-
-CREATE TABLE evaluaciones(
-    id_evaluacion int AUTO_INCREMENT PRIMARY KEY,
-    criterios varchar(300),
-    evidencia_requerida varchar(300),
-    estado_evidencia int,
-    opcion varchar(2),
-    id_eje int,
-    id_departamento int,
-    FOREIGN KEY (id_eje)REFERENCES ejes (id_eje),
-    FOREIGN KEY (id_departamento)REFERENCES departamentos (id_departamento) 
-);
-
-CREATE TABLE opciones(
-    id_opcion int AUTO_INCREMENT PRIMARY KEY,
-    nombre_opcion
-);
-
-CREATE TABLE periodos(
-    id_periodo int AUTO_INCREMENT PRIMARY KEY,
-    nombre_periodo criterios varchar(50),
-    fecha_hora_inicio datetime,
-    fecha_hora_final datetime,
-    id_departamento int,
-    FOREIGN KEY (id_departamento)REFERENCES departamentos (id_departamento) 
-);
-
-CREATE evaluacion_final(
-    id_evaluacion_final int AUTO_INCREMENT PRIMARY KEY,
-    id_evaluacion int,
-    id_periodo int,
-    id_estado int,
-    FOREIGN KEY (id_evaluacion)REFERENCES evaluaciones (id_evaluacion),
-    FOREIGN KEY (id_periodo)REFERENCES periodos (id_periodo) 
-);
-
 CREATE TABLE solicitudes_rol(
 solicitudes_rol int AUTO_INCREMENT PRIMARY KEY,
 correo_usuario varchar(100),
@@ -103,28 +64,67 @@ id_departamento int,
 FOREIGN KEY (correo_usuario) REFERENCES usuarios (correo_usuario),
 FOREIGN KEY (id_departamento) REFERENCES departamentos (id_departamento)
 );
+/*de aqui hacia abajo cambio*/
 
+CREATE TABLE componentes(
+    id_componente int AUTO_INCREMENT PRIMARY KEY,
+    nombre_componente varchar(100)
+);
+CREATE TABLE ejes(
+    id_eje int AUTO_INCREMENT PRIMARY KEY,
+    nombre_eje varchar(80),
+    id_componente int,
+    FOREIGN KEY (id_componente)REFERENCES componentes (id_componente)
+);
 
-CREATE TABLE EvaluacionRespondida(
-    id_evaluacion int AUTO_INCREMENT PRIMARY Key,
+CREATE TABLE evaluaciones(
+    id_evaluacion int AUTO_INCREMENT PRIMARY KEY,
+    criterios varchar(300),
+    evidencia_requerida varchar(300),
     estado_evidencia int,
-    evidencia VARCHAR(100),
+    opcion varchar(2),
+    nivel varchar(100),
     id_eje int,
+    FOREIGN KEY (id_eje)REFERENCES ejes (id_eje)
+);
+
+CREATE TABLE periodos(
+    id_periodo int AUTO_INCREMENT PRIMARY KEY,
+    nombre_periodo_criterios varchar(50),
+    fecha_hora_inicio datetime,
+    fecha_hora_final datetime,
+    estado_periodo varchar(50),
+    id_evaluacion int,
+    FOREIGN KEY (id_evaluacion)REFERENCES evaluaciones (id_evaluacion) 
+);
+
+CREATE TABLE evaluacionRespondida(
+    id_evaluacion_respondida int AUTO_INCREMENT PRIMARY Key,
+    comentario varchar(500),
+    evidencia VARCHAR(100),
     opcion varchar(12),
-    puntuaje int,
-    encargado_correo VARCHAR(150)
+    puntaje int,
+    id_evaluacion int,
+    id_eje int,
+    id_componente int,
+    id_departamento int,
+    id_encargado_correo VARCHAR(150)
+    FOREIGN KEY (id_evaluacion)REFERENCES evaluaciones (id_evaluacion)
+    FOREIGN KEY (id_eje)REFERENCES ejes (id_eje)
+    FOREIGN KEY (id_componente)REFERENCES componentes (id_componente)
+    FOREIGN KEY (id_departamento)REFERENCES departamentos (id_departamento)
+    FOREIGN KEY (id_encargado_correo)REFERENCES usuario (id_encargado_correo)
+
 );
 
+CREATE TABLE evaluaciones_desaprobadas(
+    id_evaluacion_desaprobada int AUTO_INCREMENT PRIMARY Key,
+    id_evaluacion_respondida int,
+    FOREIGN KEY (id_evaluacion_respondida)REFERENCES evaluacionRespondida (id_evaluacion_respondida)
 
-CREATE TABLE Comentarios_evaluaciones(
-id_comentario int AUTO_INCREMENT PRIMARY KEY,
-id_eje int,
-id_componente int,
-comentario varchar(500),
-FOREIGN KEY (id_eje) REFERENCES ejes (id_eje),
-FOREIGN KEY (id_componente) REFERENCES componentes (id_componente)
 );
 
+/*De aqui hacia arriba se toco todo y hacia abajo son los procedimientos viejos*/
 DELIMITER //
 
 CREATE PROCEDURE InsDep (IN nombre_departamento VARCHAR(50),IN siglas_dep VARCHAR(10))
@@ -391,7 +391,6 @@ DELIMITER ;
 DELIMITER //
 
 CREATE PROCEDURE genSelAreasByRol (IN idRolIN INT)
-      SELECT c.idCuentaPresupuestaria,c.nombreCuenta,u.idUEjecutora,u.nombreUEjecutora,m.idMeta,m.nombre FROM cuentapresupuestaria c INNER JOIN uejecutora u ON c.idUEjecutora = u.idUEjecutora INNER JOIN metas m  ON m.idMeta = c.idMeta WHERE u.idUEjecutora = idUEjecutoraIN;
 	BEGIN
        SELECT a.idArea,a.areaDescripcion From area a INNER JOIN areasxrol ar ON a.idArea = ar.idArea INNER JOIN roles r ON r.idRol = ar.idRol WHERE r.idRol = idRolIN;
 	END//

@@ -223,15 +223,7 @@ if(isset($_POST['ch5']) && isset($_POST['ch5'])==1){if(strlen($txt10) == 0){
         }
 
         
-        if(isset($_GET['id']) && isset($_GET['id']) == 1)// tabla 1
-        {  
-            $ocultar = 1;  
-        }elseif(isset($_GET['id']) && isset($_GET['id']) == 2){// tabla 2
-            $ocultar = 2; 
-        }elseif(isset($_GET['id']) && isset($_GET['id']) == 3){// tabla 3
-            $ocultar = 3; 
-
-        }
+ 
         
         
         
